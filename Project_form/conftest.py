@@ -14,8 +14,10 @@ from selenium.webdriver.common import action_chains
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from openpyxl import workbook, load_workbook
 from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.options import Options
+from openpyxl import workbook, load_workbook
+from datetime import datetime
 
 
 # driver = webdriver.Chrome() אם רוצים להריץ בלי פיקסטור
