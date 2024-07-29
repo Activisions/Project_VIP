@@ -1,0 +1,12 @@
+openpyxl
+PyAutoGUI
+pyperclip
+selenium
+pynput
+pytest
+pillow
+pyautogui
+opencv-python
+allure-pytest
+pytest-dependency
+pytest-rerunfailures
