@@ -1,4 +1,4 @@
-from Project_form.imports import *
+from imports import *
 from Project_form.Page_form.page1 import *
 
 
