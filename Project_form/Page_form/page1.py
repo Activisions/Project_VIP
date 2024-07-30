@@ -1,4 +1,6 @@
-from Project_form.conftest import *
+from Project_form.imports import *
+
+
 
 class Page1:
     def __init__(self, driver):

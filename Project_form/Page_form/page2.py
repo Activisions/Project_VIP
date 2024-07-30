@@ -1,4 +1,4 @@
-from Project_form.conftest import *
+from Project_form.imports import *
 
 
 class Page2:
