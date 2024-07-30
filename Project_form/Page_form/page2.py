@@ -1,5 +1,3 @@
-import time
-
 from Project_form.conftest import *
 
 
