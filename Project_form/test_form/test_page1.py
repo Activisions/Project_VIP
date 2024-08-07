@@ -9,3 +9,4 @@ def test_1(driver) :
     f_name, l_name, phone_number, email, radio, btn_step2 = s1.locators()
     assert radio.get_attribute("value") == "דרום1"
 
+1
