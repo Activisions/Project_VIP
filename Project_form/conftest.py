@@ -5,7 +5,7 @@ from imports import *
 @pytest.fixture(scope="session",autouse=True)
 def driver():
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.add_argument(r'--load-extension=C:\Users\ofir\AppData\Local\Google\Chrome\User Data\Profile 1\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm\1.59.0_0')
+    # chrome_options.add_argument(r'--load-extension=C:\Users\ofir\AppData\Local\Google\Chrome\User Data\Profile 1\Extensions\cjpalhdlnbpafiamejdnhcphjbkeiagm\1.59.0_0')
     # chrome_options.add_argument('--window-position=-2000,0')  #with maximize
     # chrome_options.add_argument("--window-size=1920,1080")
     # chrome_options.add_argument("--window-size=1500,900")
