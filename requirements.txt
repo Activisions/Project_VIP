@@ -10,3 +10,4 @@ opencv-python
 allure-pytest
 pytest-dependency
 pytest-rerunfailures
+requests
