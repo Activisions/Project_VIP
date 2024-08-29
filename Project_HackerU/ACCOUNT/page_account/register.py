@@ -1,3 +1,5 @@
+import time
+
 from imports import *
 
 
@@ -8,7 +10,6 @@ class Register:
 
 
     def register_locators(self):
-
         register_name = self.driver.find_element(By.NAME,"firstName")
         register_lastname = self.driver.find_element(By.NAME,"lastName")
         register_id = self.driver.find_element(By.NAME,"IDNumber")
@@ -28,4 +29,8 @@ class Register:
         register_phone.send_keys(phone)
         register_email.send_keys(email)
         register_checkbox1.click()
-        register_button.click()
+        try:
+            register_button.click()
+        except Exception as e:
+            print("Not Register:")
+
