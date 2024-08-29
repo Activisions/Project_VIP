@@ -13,7 +13,7 @@ class Page1:
         email = self.driver.find_element(By.ID, 'email')
         btn_step2 = self.driver.find_element(By.ID, 'btn_step2')
         radio = self.driver.find_element(By.ID,"center")
-        return (f_name, l_name, phone_number, email, radio, btn_step2,)
+        return f_name, l_name, phone_number, email, radio, btn_step2
 
     def fill(self, first_name, last_name, phone, email):
         self.driver.get("https://danielauto.net/practice/sales/sales.html")
