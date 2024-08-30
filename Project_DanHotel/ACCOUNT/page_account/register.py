@@ -1,11 +1,8 @@
-import time
-
 from imports import *
 
 
 class Register:
     def __init__(self, driver):
-        self.driver = driver
         self.driver: WebDriver = driver
 
 

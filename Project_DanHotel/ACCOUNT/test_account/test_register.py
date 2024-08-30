@@ -1,5 +1,3 @@
-import time
-
 from imports import *
 from Project_DanHotel.ACCOUNT.page_account.register import *
 
