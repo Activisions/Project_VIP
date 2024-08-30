@@ -21,7 +21,7 @@ class Register:
         register_button = self.driver.find_element(By.ID,"progress")
         return register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button
 
-    def register_fill(self, first_name, last_name, id_number, phone, email):
+    def register_fill(self, first_name="GAL", last_name="TEST", id_number="0221234", phone="0540000000", email="test@gmail.com"):
         register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button = self.register_locators()
         register_name.send_keys(first_name)
         register_lastname.send_keys(last_name)
