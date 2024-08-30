@@ -1,0 +1,2 @@
+Not Register:
+Name validation succeeded

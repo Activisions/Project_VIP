@@ -1,0 +1,2 @@
+Not Register:
+Phone validation succeeded

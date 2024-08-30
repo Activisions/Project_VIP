@@ -2,6 +2,7 @@ import pdb
 import time
 import driver
 import pytest
+import allure
 import requests
 import pyautogui
 from PIL import Image
