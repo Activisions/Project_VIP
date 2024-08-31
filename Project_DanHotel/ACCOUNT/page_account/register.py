@@ -5,7 +5,7 @@ class Register:
     def __init__(self, driver):
         self.driver: WebDriver = driver
 
-
+        #פונקציה שמקבלת את כל האלמנטים בדף ההרשמה
     def register_locators(self):
         register_name = self.driver.find_element(By.NAME,"firstName")
         register_lastname = self.driver.find_element(By.NAME,"lastName")
@@ -18,6 +18,8 @@ class Register:
         register_button = self.driver.find_element(By.ID,"progress")
         return register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button
 
+
+        #פונקציה שממלאת את דף ההרשמה, אם כפתור ההרשמה לא עבד בגלל שגיאת ולידציה היא תדפיס הודעה שלא ניתן להירשם
     def register_fill(self, first_name, last_name, id_number, phone, email):
         register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button = self.register_locators()
         register_name.send_keys(first_name)
