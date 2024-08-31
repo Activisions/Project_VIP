@@ -1,6 +1,7 @@
 import pdb
+from selenium.webdriver.chrome import webdriver
+from selenium import webdriver
 import time
-import driver
 import pytest
 import allure
 import requests
