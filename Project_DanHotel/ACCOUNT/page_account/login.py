@@ -2,7 +2,6 @@ from imports import *
 
 
 
-
 class Login:
     def __init__(self, driver):
         self.driver: WebDriver = driver
@@ -21,5 +20,10 @@ class Login:
         login_mail.send_keys(email)
         login_password.send_keys(password)
         login_button.click()
+
+
+    # def error_connect_valid(self):
+    #     error_connect_validation = self.driver.find_element(By.XPATH, "//div[@class='error']")
+    #     return error_connect_validation
 
 

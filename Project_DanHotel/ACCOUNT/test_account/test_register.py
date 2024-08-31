@@ -1,3 +1,5 @@
+import time
+
 from imports import *
 from Project_DanHotel.ACCOUNT.page_account.register import *
 
@@ -10,6 +12,7 @@ def test_register1(driver):
     filler = Register(driver)
     filler.register_fill("GAL", "TEST", "0221234", "0540000000", "test@gmail.com")
     register_name, register_lastname, register_id, register_phone, register_email, register_country, register_checkbox1, register_checkbox2, register_button = filler.register_locators()
+    time.sleep(2)
     assert register_button.get_attribute('class') == "disabled u1st-tabbable-element"
     print("Register succeeded")
 
