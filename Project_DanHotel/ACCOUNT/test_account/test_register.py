@@ -4,13 +4,14 @@ from Project_DanHotel.ACCOUNT.page_account.register import *
 register_url = "https://www.danhotels.co.il/eDan/Registration"
 
 
+#פפונקציה שמתחברת בהצלחה
 def test_register1(driver):
     driver.get(register_url)
     filler = Register(driver)
     filler.register_fill("GAL", "TEST", "0221234", "0540000000", "test@gmail.com")
     print("Register succeeded")
 
-
+#טסט שמתחבר עם שם לא נכון ומקבל ולידציה
 def test_register2(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -19,7 +20,7 @@ def test_register2(driver):
     assert error_wrong_name.text == "אנא בדוק תקינות שם פרטי באנגלית"
     print("Name validation succeeded")
 
-
+#טסט שמתחבר עם שם משפחה לא נכון ומקבל ולידציה
 def test_register3(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -29,6 +30,7 @@ def test_register3(driver):
     print("LastName validation succeeded")
 
 
+#טסט שמתחבר עם תעודת זהות לא נכון ומקבל ולידציה
 def test_register4(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -38,6 +40,7 @@ def test_register4(driver):
     print("ID validation succeeded")
 
 
+#טסט שמתחבר עם טלפון לא נכון ומקבל ולידציה
 def test_register5(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -46,7 +49,7 @@ def test_register5(driver):
     assert error_wrong_phone.text == "אנא בדוק תקינות טלפון נייד"
     print("Phone validation succeeded")
 
-
+#טסט שמתחבר עם אימייל לא נכון ומקבל ולידציה
 def test_register6(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -55,7 +58,7 @@ def test_register6(driver):
     assert error_wrong_email.text == "אנא בדוק תקינות דוא\"ל"
     print("Email validation succeeded")
 
-
+#טסט שבודק שבשדה הנעול באתר של בחר מדינה , מופיע ישראה
 def test_register7(driver):
     driver.get(register_url)
     filler = Register(driver)
@@ -64,7 +67,7 @@ def test_register7(driver):
     print(f"The value of register_country is: {country_value}")
     assert country_value == "ישראל"
 
-
+#טסט שבודק שהצ'ק בוקס השני מופיע לא לחוץ לאחר הלחיצה  עליו כי  ( is selected ) לא עבד
 def test_register8(driver):
     driver.get(register_url)
     filler = Register(driver)
