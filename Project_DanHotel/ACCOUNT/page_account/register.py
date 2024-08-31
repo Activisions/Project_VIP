@@ -32,4 +32,3 @@ class Register:
             register_button.click()
         except Exception as e:
             print("Not Register:")
-
