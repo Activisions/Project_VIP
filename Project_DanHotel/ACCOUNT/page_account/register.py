@@ -16,7 +16,7 @@ class Register:
         register_checkbox1 = self.driver.find_element(By.XPATH,"//*[@id='agreeTermsCheckBox']/span")
         register_checkbox2 = self.driver.find_element(By.XPATH,"(//span[contains(@class,'MuiCheckbox-root MuiCheckbox-colorPrimary')])[2]")
         register_button = self.driver.find_element(By.ID,"progressWrapper")
-        return register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button
+        return (register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button)
 
 
         #פונקציה שממלאת את דף ההרשמה, אם כפתור ההרשמה לא עבד בגלל שגיאת ולידציה היא תדפיס הודעה שלא ניתן להירשם

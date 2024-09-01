@@ -21,9 +21,16 @@ class Login:
         login_password.send_keys(password)
         login_button.click()
 
+    def error_connect_valid(self):
+        try:
+            loginmsg = self.driver.find_element(By.XPATH,"//*[@class='primary-controls']").text == "מייל או סיסמא שגויים"
+        except Exception as e:
+            return None
 
-    # def error_connect_valid(self):
-    #     error_connect_validation = self.driver.find_element(By.XPATH, "//div[@class='error']")
-    #     return error_connect_validation
 
-
+    def error_connect_validmail(self):
+        try:
+            loginmsg2 = self.driver.find_element(By.XPATH, "//*[@id='mui-2-helper-text']").text
+            return loginmsg2
+        except Exception as e:
+            return None
