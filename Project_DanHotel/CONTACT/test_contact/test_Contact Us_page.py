@@ -7,7 +7,7 @@ Contactus_url = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 def test_Contactus1(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
-    contact_filler.contact_us_fill("גל", "test@gmail.com", "0530000000","test")
+    contact_filler.contact_us_fill("גל", "test@gmail.com", "0530000000", "test")
     print("contact succeeded")
 
 
