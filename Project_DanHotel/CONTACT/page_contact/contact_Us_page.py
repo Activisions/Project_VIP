@@ -15,6 +15,7 @@ class contact_Us:
         choose_subject = self.driver.find_element(By.XPATH, "//*[@id=\"edit-subject\"]/option[5]")
         contact_note = self.driver.find_element(By.ID, "edit-message")
         contact_button = self.driver.find_element(By.NAME,"op")
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", contact_button)
         return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button
 
     #פונקציה למילוי פרטים (טלפון ,אימייל ,טלפון)

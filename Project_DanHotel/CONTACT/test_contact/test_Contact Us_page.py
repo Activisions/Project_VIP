@@ -49,3 +49,4 @@ def test_Contactus6(driver):
     operating_Hours = operating_Hours.text
     assert operating_Hours == "ראשון-חמישי: 8:00 - 19:00"
     print(operating_Hours)
+
