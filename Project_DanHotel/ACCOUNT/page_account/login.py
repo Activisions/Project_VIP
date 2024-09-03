@@ -23,8 +23,7 @@ class Login:
 
     def error_connect_valid(self):
         try:
-            loginmsg = self.driver.find_element(By.XPATH,
-                                                "//*[@class='primary-controls']").text == "מייל או סיסמא שגויים"
+            loginmsg = self.driver.find_element(By.XPATH,"//*[@class='primary-controls']").text == "מייל או סיסמא שגויים"
         except Exception as e:
             return None
 

@@ -15,11 +15,9 @@ class Register:
         register_email = self.driver.find_element(By.NAME, "emailAddress")
         register_country = self.driver.find_element(By.XPATH, "//input[@id='mui-7']")
         register_checkbox1 = self.driver.find_element(By.XPATH, "//*[@id='agreeTermsCheckBox']/span")
-        register_checkbox2 = self.driver.find_element(By.XPATH,
-                                                      "(//span[contains(@class,'MuiCheckbox-root MuiCheckbox-colorPrimary')])[2]")
+        register_checkbox2 = self.driver.find_element(By.XPATH,"(//span[contains(@class,'MuiCheckbox-root MuiCheckbox-colorPrimary')])[2]")
         register_button = self.driver.find_element(By.ID, "progressWrapper")
-        return (register_name, register_lastname, register_id, register_phone, register_email, register_country,
-                register_checkbox1, register_checkbox2, register_button)
+        return register_name, register_lastname, register_id, register_phone, register_email, register_country,register_checkbox1, register_checkbox2, register_button
 
     def error_wrong_name(self):
         error_wrong_name = self.driver.find_element(By.XPATH, "//*[@id='mui-1-helper-text']")

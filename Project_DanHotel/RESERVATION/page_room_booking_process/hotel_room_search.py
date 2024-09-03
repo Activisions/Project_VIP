@@ -18,7 +18,6 @@ class choose_room:
 
         # Scroll to the dropdown to make sure it's in view
         self.scroll_to_element(select_Hotel_dropdown)
-        select_Hotel_dropdown.click()
 
         # Waiting for a specific condition
         dan_hotel_jerusalem = WebDriverWait(self.driver, 15).until(
@@ -34,6 +33,7 @@ class choose_room:
 
             # Click using JavaScript
             self.driver.execute_script("arguments[0].click();", dan_hotel_jerusalem[1])
+            select_Hotel_dropdown.click()
         else:
             print(f"Error: Not enough elements found. Found {len(dan_hotel_jerusalem)} elements.")
 
