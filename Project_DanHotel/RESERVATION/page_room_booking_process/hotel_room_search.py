@@ -5,7 +5,7 @@ class choose_room:
     def __init__(self, driver):
         self.driver: WebDriver = driver
 
-    #פנקציה לזיהוי אלמנטים בעמוד "מחשבון" חיפוש חדר
+    #פנקציה לזיהוי אלמנטים בעמוד "מחשבון" חיפוש מלון
     def scroll_to_element(self, element):
         """Scrolls to a specific element."""
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
