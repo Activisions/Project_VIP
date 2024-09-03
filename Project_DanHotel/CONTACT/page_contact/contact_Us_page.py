@@ -14,7 +14,8 @@ class contact_Us:
         choose_subject_dropdown = self.driver.find_element(By.ID, "edit-subject")
         choose_subject = self.driver.find_element(By.XPATH, "//*[@id=\"edit-subject\"]/option[5]")
         contact_note = self.driver.find_element(By.ID, "edit-message")
-        contact_button = self.driver.find_element(By.NAME,"op")
+        contact_button = self.driver.find_element(By.NAME, "op")
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", contact_button)
         return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button
 
     #פונקציה למילוי פרטים (טלפון ,אימייל ,טלפון)
@@ -26,10 +27,9 @@ class contact_Us:
         contact_note.send_keys(nots)
         contact_button.click()
 
-
     #פונקציה למילוי פרטים (עם בחירת מלון בלבד)
     def contact_us_fill_hotel(self, name, email, phone):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel,choose_subject_dropdown, choose_subject, contact_note, contact_button = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button = self.contact_locators()
         contact_name.send_keys(name)
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
@@ -39,7 +39,7 @@ class contact_Us:
 
     #פונקציה למילוי פרטים (עם בחירת נושא בלבד)
     def contact_us_fill_subject(self, name, email, phone):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel,choose_subject_dropdown, choose_subject, contact_note, contact_button = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button = self.contact_locators()
         contact_name.send_keys(name)
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
