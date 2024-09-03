@@ -14,7 +14,7 @@ def test_room_calculator_1(driver):
     choosing = choose_room(driver)
     # Ensure the dropdown is clickable and all elements are visible
     choosing.fill_room_Search_Calculator()
-
+    hold()
 
 def test_room_calculator_2(driver):
     driver.get(hotel_room_search_url)

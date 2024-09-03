@@ -10,7 +10,7 @@ class Giftcard:
 
 
     def gift_price_element(self):
-        wait = WebDriverWait(self.driver, 15)
+        wait = WebDriverWait(self.driver, 50)
         element = wait.until(EC.presence_of_element_located((By.CLASS_NAME, "giftcard-sum-giftcard-text")))
         self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
         giftprice_number = self.driver.find_element(By.XPATH, "//*[@id='giftcard-sum-input']")
