@@ -19,6 +19,40 @@ class Register:
         return (register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button)
 
 
+    def error_wrong_name(self):
+        error_wrong_name = self.driver.find_element(By.XPATH, "//*[@id='mui-1-helper-text']")
+        return error_wrong_name.text
+
+    def error_wrong_lastname(self):
+        error_wrong_lastname = self.driver.find_element(By.XPATH, "//*[@id='mui-2-helper-text']")
+        return error_wrong_lastname.text
+
+    def error_wrong_id(self):
+        error_wrong_id = self.driver.find_element(By.XPATH, "//*[3]/p[@id='mui-3-helper-text']")
+        return error_wrong_id.text
+
+    def error_wrong_phone(self):
+        error_wrong_phone = self.driver.find_element(By.XPATH, "//*[@id='mui-4-helper-text']")
+        return error_wrong_phone.text
+
+
+    def error_wrong_email(self):
+        error_wrong_email = self.driver.find_element(By.XPATH, "//*[@id='mui-5-helper-text']")
+        return error_wrong_email.text
+
+
+    def CheckBox(self):
+        box = self.driver.find_element(By.XPATH, "(//*[@data-testid='CheckBoxOutlineBlankIcon'])[2]")
+        return box.is_enabled()
+
+
+
+
+
+
+
+
+
         #פונקציה שממלאת את דף ההרשמה, אם כפתור ההרשמה לא עבד בגלל שגיאת ולידציה היא תדפיס הודעה שלא ניתן להירשם
     def register_fill(self, first_name, last_name, id_number, phone, email):
         register_name,register_lastname,register_id,register_phone,register_email,register_country, register_checkbox1, register_checkbox2, register_button = self.register_locators()
@@ -32,3 +66,8 @@ class Register:
             register_button.click()
         except Exception as e:
             print("Not Register:")
+
+
+
+
+
