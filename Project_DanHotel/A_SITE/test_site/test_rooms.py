@@ -8,9 +8,9 @@ rooms_url = "https://www.danhotels.co.il/Booking/SearchResults?fr=htl&com=box&tt
 def test_select_hotel_menu(driver):
     driver.get(rooms_url)
     room = Rooms(driver)
-    room.select_hotel_menu()
+    room.select_hotel_menu(7)
     room.select_date_menu(20, 25)
-    assert room.select_hotel_menu() == "דן פנורמה תל אביב"
+    assert room.select_hotel_menu(7) == "דן פנורמה תל אביב"
 
 
 #   טסט שבוחר מלון שהתאריכים בו לא זמינים ומתקדם כל פעם חודש קדימה ובודק אם פנוי
@@ -26,7 +26,7 @@ def test_full_booking_hotel(driver):
 def test_hotel_with_more_rooms(driver):
     driver.get(rooms_url)
     room = Rooms(driver)
-    room.select_hotel_menu()
+    room.select_hotel_menu(7)
     room.select_date_menu(20, 25)
     assert room.AddAnotherRoom().text == "אורח יקר, התפוסה המבוקשת בחדר הראשון שבחרת אינה מתאימה לשהייה בחדר אחד. אנא פצלו את ההרכב ובצעו חיפוש מחדש."
 
@@ -35,7 +35,7 @@ def test_hotel_with_more_rooms(driver):
 def test_wrong_date_menu(driver):
     driver.get(rooms_url)
     room = Rooms(driver)
-    room.select_hotel_menu()
+    room.select_hotel_menu(7)
     result = room.select_date_menu(30, 40)
     assert result == "הוכנס תאריך באופן שגוי"
 
@@ -44,6 +44,8 @@ def test_wrong_date_menu(driver):
 def test_date31_menu(driver):
     driver.get(rooms_url)
     room = Rooms(driver)
-    room.select_hotel_menu()
+    room.select_hotel_menu(7)
     result = room.select_date_menu(30, 31)
     assert result == "הוכנס תאריך באופן שגוי"
+
+
