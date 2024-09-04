@@ -49,3 +49,25 @@ def test_date31_menu(driver):
     assert result == "הוכנס תאריך באופן שגוי"
 
 
+#טסט שבודק ולידציה לשדה בחירת מלון
+def test_less_hotel_validation(driver):
+    driver.get(rooms_url)
+    room = Rooms(driver)
+    room.Press_Price_Button()
+    assert room.less_hotal_validation() == "אנא בחר מלון"
+
+
+#טסט שבודק ולידציה לשדה תאריך הגעה
+def test_less_chickin_validation(driver):
+    driver.get(rooms_url)
+    room = Rooms(driver)
+    room.Press_Price_Button()
+    assert room.less_checkin_validation() == "אנא בחר תאריך צ'ק אין"
+
+
+#טסט שבודק ולידציה לשדה תאריך עזיבה
+def test_less_checkout_validation(driver):
+    driver.get(rooms_url)
+    room = Rooms(driver)
+    room.Press_Price_Button()
+    assert room.less_checkout_validation() == "אנא בחר תאריך צ'ק אווט"
