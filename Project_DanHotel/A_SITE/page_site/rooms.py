@@ -22,8 +22,9 @@ class Rooms:
         # listdate1 = self.driver.find_elements(By.XPATH, "//*[2]/table/tbody/tr[4]/td[5]/button/div")
         # listdate1 = self.driver.find_elements(By.XPATH,"//*[@class='CalendarDay__button']")
         listdate1 = self.driver.find_elements(By.XPATH,"//*[2]/table/tbody/tr/td/*[@class='CalendarDay__button']/div[1]")
-        listdate2 = self.driver.find_elements(By.XPATH,"//*[2]/table/tbody/tr/td/*[@class='CalendarDay__button']/div[1]")
-        return listdate1 , listdate2
+        listdate2 = self.driver.find_elements(By.XPATH,"//*[2]/table/tbody/tr/td/*[@class='CalendarDay__button']")
+        nextdate = self.driver.find_element(By.XPATH,"//*[@class='DayPickerNavigation__next DayPickerNavigation__next--rtl']")
+        return (listdate1,listdate2,nextdate)
 
 
 
@@ -34,34 +35,20 @@ class Rooms:
     def select_hotel_menu(self):
         self.element_find_hotel_menu_button()
         selecthotel = self.element_find_hotel_menu_list()
-        selecthotel[6].click()
+        selecthotel[21].click()
         time.sleep(1)
 
 
-    def select_date_menu(self):
-        listdate1 , listdate2= self.element_choose_date()
-        listdate1[17].click()
-        listdate2[18].click()
-
-
-
-
-        # checklist1 = listdate1[date1].get_attribute("aria-label")
-        # checklist2 = listdate2[date2].get_attribute("aria-label")
-
-
-        # if checklist1.startswith("לא זמין") or checklist2.startswith("לא זמין"):
-        #     nextdate.click()
-        # else:
-        #     listdate1[date1].click()
-        #     listdate2[date2].click()
-
-
-
-
-# nextdate = self.driver.find_element(By.XPATH,"/button[@class='DayPickerNavigation__next DayPickerNavigation__next--rtl']")
-
-
+    def select_date_menu(self,date1=20,date2=22):
+        listdate1,listdate2,nextdate = self.element_choose_date()
+        checkdate = listdate2[date1-1].get_attribute("aria-label")
+        checkdate2 = listdate2[date2-1].get_attribute("aria-label")
+        print(checkdate,checkdate2)
+        if checkdate.startswith("לא זמין") and checkdate2.startswith("לא זמין"):
+            nextdate.click()
+        else:
+            listdate1[date1-1].click()
+            listdate1[date2-1].click()
 
 
 

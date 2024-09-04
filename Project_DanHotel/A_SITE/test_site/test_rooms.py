@@ -11,5 +11,4 @@ def test_test(driver):
     room = Rooms(driver)
     room.select_hotel_menu()
     room.select_date_menu()
-    hold()
 
