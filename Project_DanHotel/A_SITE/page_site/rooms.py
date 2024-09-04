@@ -19,9 +19,11 @@ class Rooms:
 
 
     def element_choose_date(self):
-        listdate1 = self.driver.find_element(By.XPATH, "//label[contains(text(), 'בחר חמישי, 26 בספטמבר 2024')]")
+        # listdate1 = self.driver.find_elements(By.XPATH, "//*[2]/table/tbody/tr[4]/td[5]/button/div")
         # listdate1 = self.driver.find_elements(By.XPATH,"//*[@class='CalendarDay__button']")
-        return listdate1.click()
+        listdate1 = self.driver.find_elements(By.XPATH,"//*[2]/table/tbody/tr/td/*[@class='CalendarDay__button']/div[1]")
+        listdate2 = self.driver.find_elements(By.XPATH,"//*[2]/table/tbody/tr/td/*[@class='CalendarDay__button']/div[1]")
+        return listdate1 , listdate2
 
 
 
@@ -37,7 +39,10 @@ class Rooms:
 
 
     def select_date_menu(self):
-        listdate1 = self.element_choose_date()
+        listdate1 , listdate2= self.element_choose_date()
+        listdate1[17].click()
+        listdate2[18].click()
+
 
 
 
