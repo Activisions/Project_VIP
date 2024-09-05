@@ -18,9 +18,11 @@ class Giftcard:
         return giftprice_number , giftprice_button
 
     def gift_price_fiil(self,gift):
-        giftprice_number, giftprice_button = self.gift_price_element()
-        giftprice_number.send_keys(gift)
-        giftprice_button.click()
+        try:
+            giftprice_number, giftprice_button = self.gift_price_element()
+            giftprice_number.send_keys(gift)
+            giftprice_button.click()
+        except: print("הכנס מספר בלבד / כפולות של 100 בלבד")
 
     def gift_card_price(self):
         try:
