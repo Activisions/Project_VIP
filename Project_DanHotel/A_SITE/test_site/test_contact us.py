@@ -1,5 +1,4 @@
-from imports import *
-from Project_DanHotel.CONTACT.page_contact.contact_Us_page import *
+from Project_DanHotel.A_SITE.page_site.contact_us import *
 
 Contactus_url = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 
@@ -49,4 +48,3 @@ def test_Contactus6(driver):
     operating_Hours = operating_Hours.text
     assert operating_Hours == "ראשון-חמישי: 8:00 - 19:00"
     print(operating_Hours)
-
