@@ -42,12 +42,11 @@ class language:
             print(f"Test Passed: URL changed to {new_url}")
         else:
             print(f"Test Failed: URL changed to {original_url}, expected {new_url}")
-        return new_url
 
     def check_element(self):
         english_site_button, english_link, dan_hotel_eng_logo_text, eng_text_changed = self.language_locators()
-        return dan_hotel_eng_logo_text.text
-
-
-
-        #assert eng_text_changed.text == "Experience The Best", f"The changed text is {eng_text_changed.text}"
+        english_site_button.click()
+        english_link.click()
+        time.sleep(3)
+        assert dan_hotel_eng_logo_text.text == "Dan Hotels", f"The title of the site is {dan_hotel_eng_logo_text.text}"
+        assert eng_text_changed.text == "Experience The Best", f"The changed text is {eng_text_changed.text}"
