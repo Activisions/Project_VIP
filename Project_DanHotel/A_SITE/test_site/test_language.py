@@ -21,7 +21,7 @@ def test_change_language_to_english_check_element(driver):
     driver.get(hebrew_url)
     switch_to_english = language(driver)
     switch_to_english.check_element()
-
+    assert switch_to_english.check_element() == "Dan Hotels"
 
 hebrew_url = "https://www.danhotels.co.il"
 
