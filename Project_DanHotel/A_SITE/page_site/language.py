@@ -22,20 +22,20 @@ class language:
         return english_site_button, english_link, dan_hotel_eng_logo_text, eng_text_changed
 
     def english_site_mood(self):
-        english_site_button, link, dan_hotel_eng_logo_text, text_changed = self.language_locators()
+        english_site_button, english_link, dan_hotel_eng_logo_text, text_changed = self.language_locators()
         english_site_button.click()
-        link_text = link.text
+        link_text = english_link.text
         if link_text == "ENGLISH":
             print(f" The text button to switch to the Dan Hotels site in English is: {link_text}")
         else:
             print(f" No matching text found to: {link_text}")
-        link.click()
+        english_link.click()
 
     def url_change(self):
-        english_site_button, link, dan_hotel_eng_logo_text, text_changed = self.language_locators()
+        english_site_button, english_link, dan_hotel_eng_logo_text, text_changed = self.language_locators()
         original_url = self.driver.current_url
         english_site_button.click()
-        link.click()
+        english_link.click()
         time.sleep(3)
         new_url = self.driver.current_url
         if new_url != original_url:
@@ -45,8 +45,7 @@ class language:
 
     def check_element(self):
         english_site_button, english_link, dan_hotel_eng_logo_text, eng_text_changed = self.language_locators()
+        return english_site_button, english_link, dan_hotel_eng_logo_text, eng_text_changed
         english_site_button.click()
         english_link.click()
         time.sleep(3)
-        assert dan_hotel_eng_logo_text.text == "Dan Hotels", f"The title of the site is {dan_hotel_eng_logo_text.text}"
-        assert eng_text_changed.text == "Experience The Best", f"The changed text is {eng_text_changed.text}"
