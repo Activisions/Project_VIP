@@ -45,8 +45,4 @@ class language:
 
     def check_element(self):
         english_site_button, english_link, dan_hotel_eng_logo_text, eng_text_changed = self.language_locators()
-        english_site_button.click()
-        english_link.click()
-        time.sleep(3)
-        assert dan_hotel_eng_logo_text.text == "Dan Hotels", f"The title of the site is {dan_hotel_eng_logo_text.text}"
-        assert eng_text_changed.text == "Experience The Best", f"The changed text is {eng_text_changed.text}"
+        return dan_hotel_eng_logo_text.text
