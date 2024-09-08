@@ -27,14 +27,14 @@ def test_Contactus3(driver):
     assert error_wrong_name.text == "אמייל does not contain a valid email."
     print("e-mail validation succeeded")
 
-
+@pytest.mark.smoke
 def test_Contactus4(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill_hotel("גל", "test@gmail.com", "0530000000")
     print("choosing hotel succeeded")
 
-
+@pytest.mark.smoke
 def test_Contactus5(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -48,3 +48,5 @@ def test_Contactus6(driver):
     operating_Hours = operating_Hours.text
     assert operating_Hours == "ראשון-חמישי: 8:00 - 19:00"
     print(operating_Hours)
+
+
