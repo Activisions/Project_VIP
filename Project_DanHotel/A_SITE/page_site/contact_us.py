@@ -15,6 +15,7 @@ class contact_Us:
         choose_subject = self.driver.find_element(By.XPATH, "//*[@id=\"edit-subject\"]/option[5]")
         contact_note = self.driver.find_element(By.ID, "edit-message")
         contact_button = self.driver.find_element(By.NAME, "op")
+        self.driver.execute_script("arguments[0].scrollIntoView();",contact_button)
         return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button
 
     #פונקציה למילוי פרטים (טלפון ,אימייל ,טלפון)
@@ -24,8 +25,7 @@ class contact_Us:
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
         contact_note.send_keys(nots)
-        contact_button.click()
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", contact_button)
+        # contact_button.click()
 
     #פונקציה למילוי פרטים (עם בחירת מלון בלבד)
     def contact_us_fill_hotel(self, name, email, phone):
@@ -35,8 +35,7 @@ class contact_Us:
         contact_phone.send_keys(phone)
         choose_hotel_dropdown.click()
         choose_hotel.click()
-        contact_button.click()
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", contact_button)
+        # contact_button.click()
 
     #פונקציה למילוי פרטים (עם בחירת נושא בלבד)
     def contact_us_fill_subject(self, name, email, phone):
@@ -46,5 +45,4 @@ class contact_Us:
         contact_phone.send_keys(phone)
         choose_subject_dropdown.click()
         choose_subject.click()
-        contact_button.click()
-        self.driver.execute_script("arguments[0].scrollIntoView(true);", contact_button)
+        # contact_button.click()
