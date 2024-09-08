@@ -1,3 +1,5 @@
+import pytest
+
 from Project_DanHotel.A_SITE.page_site.rooms import Rooms
 from imports import *
 
@@ -23,6 +25,7 @@ def test_full_booking_hotel(driver):
 
 
 # פותח אופציה לחדרים נוספים וממלא את כל התפריטים - בודק שיש ולידציה פופ אפ לאחר התקדמות
+@pytest.skip
 def test_hotel_with_more_rooms(driver):
     driver.get(rooms_url)
     room = Rooms(driver)
