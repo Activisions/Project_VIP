@@ -12,7 +12,6 @@ def driver():
     # chrome_options.add_argument('--headless')                          # אם רוצים להריץ ברקע
     driver = webdriver.Chrome(options=chrome_options)
     driver.maximize_window()                                             # פותח את האתר על כל המסך
-    driver.implicitly_wait(10)
     # driver = webdriver.Firefox()
     yield driver
     driver.quit()
