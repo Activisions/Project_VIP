@@ -12,17 +12,25 @@ class Orders:
     price = (By.XPATH,"//div[@class='price-item regular']/div[1]/span")
     club_price = (By.XPATH,"//div[@class='price-item club']/div[1]/span")
 
+    # def match_price(self):
+    #     price = self.driver.find_elements(*self.price)
+    #     for matches in range(len(price)):
+    #         price = self.driver.find_elements(*self.price)
+    #         print(price[matches].text)
+
+
     def match_price(self):
         price = self.driver.find_elements(*self.price)
-        for matches in range(len(price)):
-            price = self.driver.find_elements(*self.price)
-            print(price[matches].text)
-
-
-    def match_price1(self):
-        price = self.driver.find_elements(*self.price)
+        club_price = self.driver.find_elements(*self.club_price)
         for matches in price:
-            print(matches.text)
+            price = matches.text
+            for matches2 in club_price:
+                club_price = matches2.text
+                if price < club_price:
+                    print("מחיר מועדון גדול ממחיר אתר")
+                else:
+                    print("הבדיקה עברה בהצלחה")
+
 
 
 
