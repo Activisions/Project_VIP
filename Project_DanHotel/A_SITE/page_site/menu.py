@@ -14,7 +14,7 @@ class Menu:
     def get_menu_and_page_text(self):
         menu_items = self.driver.find_elements(*self.menu_links)
         for runner in range(len(menu_items)):
-            if runner == 11:
+            if runner == 10:
                 continue
             menu_items = self.driver.find_elements(*self.menu_links)
             menu_items[runner].click()
