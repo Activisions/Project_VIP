@@ -19,7 +19,7 @@ class Orders:
             print(price[matches].text)
 
 
-    def match_price(self):
+    def match_price1(self):
         price = self.driver.find_elements(*self.price)
         for matches in price:
             print(matches.text)
