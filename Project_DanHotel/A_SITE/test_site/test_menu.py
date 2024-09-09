@@ -1,30 +1,12 @@
 from imports import *
-from Project_DanHotel.A_SITE.page_site.menu import MenuLinks
+from Project_DanHotel.A_SITE.page_site.menu import Menu
+
+urllinks = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 
 
-def test_homepage_hebrew(driver):
-    driver.get("https://www.danhotels.co.il/")
-    menulinks = MenuLinks(driver)
-    menulinks.home_page_links()
-    assert menulinks.home_page_links() == True
-
-
-def test_hotels(driver):
-    driver.get("https://www.danhotels.co.il/IsraelHotels")
-    menulinks = MenuLinks(driver)
-    menulinks.home_page_links()
-    assert menulinks.home_page_links() == True
-
-
-def test_Accessibility(driver):
-    driver.get("https://www.danhotels.co.il/AccessibilityStatement")
-    menulinks = MenuLinks(driver)
-    menulinks.home_page_links()
-    assert menulinks.home_page_links() == True
-
-
-def test_contact(driver):
-    driver.get("https://www.danhotels.co.il/AboutDanhotels/Contactus")
-    menulinks = MenuLinks(driver)
-    menulinks.home_page_links()
-    assert menulinks.home_page_links() == True
+def test_menu(driver):
+    driver.get(urllinks)
+    menu = Menu(driver)
+    menu_texts = menu.get_menu_and_page_text()
+    for menu_item_text, page_text_content in menu_texts:
+        assert menu_item_text in page_text_content, f"Menu item {menu_item_text} not found in page text"

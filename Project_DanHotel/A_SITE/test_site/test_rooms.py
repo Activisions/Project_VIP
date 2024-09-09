@@ -1,7 +1,5 @@
-import pytest
-
-from Project_DanHotel.A_SITE.page_site.rooms import Rooms
 from imports import *
+from Project_DanHotel.A_SITE.page_site.rooms import Rooms
 
 rooms_url = "https://www.danhotels.co.il/Booking/SearchResults?fr=htl&com=box&ttl=ChooseYourRoom&Lang=heb&editMode=true"
 
