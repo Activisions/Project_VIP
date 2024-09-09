@@ -8,4 +8,3 @@ def test_menu(driver):
     driver.get(urllinks)
     menu = Menu(driver)
     menu.get_menu_and_page_text()
-    hold()

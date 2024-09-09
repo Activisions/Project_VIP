@@ -8,7 +8,6 @@ class Menu:
         self.driver = driver
 
     menu_links = (By.XPATH, "//nav[@class='about-menu he']//ul//li/a")
-    # page_text = (By.XPATH, "//article/div/div/div/div/div/span")
 
 
     def get_menu_and_page_text(self):
