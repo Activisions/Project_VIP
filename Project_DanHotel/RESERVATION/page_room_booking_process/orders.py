@@ -11,43 +11,21 @@ class Orders:
 
     price = (By.XPATH,"//div[@class='price-item regular']/div[1]/span")
     club_price = (By.XPATH,"//div[@class='price-item club']/div[1]/span")
-
-    # def match_price(self):
-    #     price = self.driver.find_elements(*self.price)
-    #     for matches in range(len(price)):
-    #         price = self.driver.find_elements(*self.price)
-    #         print(price[matches].text)
-
-
-    # def match_price(self):
-    #     price = self.driver.find_elements(*self.price)
-    #     club_price = self.driver.find_elements(*self.club_price)
-    #     checker = True
-    #     for matches in price:
-    #         price = matches.text
-    #         for matches2 in club_price:
-    #             club_price = matches2.text
-    #             if price < club_price:
-    #                 checker = False
-    #                 print("מחיר מועדון גדול ממחיר אתר")
-    #             else:
-    #                 print("הבדיקה עברה בהצלחה")
-    #     return checker
-
     def match_price(self):
         prices = self.driver.find_elements(*self.price)
         club_prices = self.driver.find_elements(*self.club_price)
         checker = True
-        for price_element in prices:
-            price_value = int(price_element.text.replace('₪', '').replace(',', '').strip())
-            for club_price_element in club_prices:
-                club_price_value = int(club_price_element.text.replace('₪', '').replace(',', '').strip())
-                if club_price_value > price_value:
-                    checker = False
-                    print(f"price {price_value} club {club_price_value}")
-                    return checker
+        for price_element, club_price_element in zip(prices, club_prices):
+            price_value = int(price_element.text.replace('₪','').replace(',','').strip())
+            club_price_value = int(club_price_element.text.replace('₪','').replace(',','').strip())
 
-        print("הבדיקה עברה בהצלחה")
+            if club_price_value > price_value:
+                checker = False
+                print(f"price {price_value} is less than club price {club_price_value}")
+                break  # יוצא מהלולאה כי לא נדרשות בדיקות נוספות אם נמצאה אי התאמה
+
+        if checker:
+            print("הבדיקה עברה בהצלחה")
         return checker
 
 
