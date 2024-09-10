@@ -1,0 +1,51 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+*.egg-info/
+
+# Pytest
+.cache/
+*.cover
+*.log
+nosetests.xml
+coverage.xml
+*.hypothesis/
+*.pytest_cache/
+
+# Selenium
+selenium_driver/
+selenium_logs/
+
+# Allure
+allure-results/
+allure-report/
+
+# Other
+*.DS_Store
+*.idea/
+*.vscode/
+*.log
+*.csv
+*.dat
+
+# Operating System files
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDEs
+*.iml
+.idea/
+*.sublime-project
+*.sublime-workspace
