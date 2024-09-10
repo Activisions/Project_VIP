@@ -1,0 +1,2 @@
+Not Register:
+ID validation succeeded
