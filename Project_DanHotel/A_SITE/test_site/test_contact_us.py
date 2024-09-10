@@ -7,7 +7,9 @@ def test_Contactus1(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill("גל", "test@gmail.com", "0530000000", "test")
-    assert contact_filler.contact_us_fill_text() == "צור קשר"
+    check_text, check_error_name, check_error_email = contact_Us.contact_us_fill_text()
+    expected_message = "צור קשר"
+    assert check_text == expected_message
     print("contact succeeded")
 
 
@@ -15,7 +17,9 @@ def test_Contactus2(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill("ג", "test@gmail.com", "0530000000","test")
-    assert contact_filler.contact_us_fill_text() == "Please enter at least 2 characters."
+    check_text, check_error_name, check_error_email = contact_Us.contact_us_fill_text()
+    expected_message = "Please enter at least 2 characters"
+    assert check_error_name == expected_message
     print("Name validation succeeded")
 
 
@@ -23,8 +27,9 @@ def test_Contactus3(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill("גל", "@.com", "0530000000","test")
-    #error_wrong_name = driver.find_element(By.ID, "edit-email-error")
-    assert error_wrong_name.text == "אמייל does not contain a valid email."
+    check_text, check_error_name, check_error_email = contact_Us.contact_us_fill_text()
+    expected_message = "אמייל does not contain a valid email."
+    assert check_error_email == expected_message
     print("e-mail validation succeeded")
 
 

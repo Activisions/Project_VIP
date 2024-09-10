@@ -17,12 +17,13 @@ class contact_Us:
         contact_button = self.driver.find_element(By.NAME, "op")
         H1_title =self.driver.find_element(By.XPATH,"//*[@id=\"block-danhotel-content\"]/div/div[3]/div/div[2]/article/div/div/div[1]/div/div/span")
         error_wrong_name =self.driver.find_element(By.ID, "edit-name-error")
+        error_wrong_email =self.driver.find_element(By.ID, "edit-email-error")
         self.driver.execute_script("arguments[0].scrollIntoView();",contact_button)
-        return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name
+        return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email
 
     #פונקציה למילוי פרטים (טלפון ,אימייל ,טלפון)
     def contact_us_fill(self, name, email, phone, nots):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email = self.contact_locators()
         contact_name.send_keys(name)
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
@@ -31,7 +32,7 @@ class contact_Us:
 
     #פונקציה למילוי פרטים (עם בחירת מלון בלבד)
     def contact_us_fill_hotel(self, name, email, phone):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email = self.contact_locators()
         contact_name.send_keys(name)
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
@@ -41,7 +42,7 @@ class contact_Us:
 
     #פונקציה למילוי פרטים (עם בחירת נושא בלבד)
     def contact_us_fill_subject(self, name, email, phone):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email = self.contact_locators()
         contact_name.send_keys(name)
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
@@ -50,10 +51,11 @@ class contact_Us:
         # contact_button.click()
 
     def contact_us_fill_text(self):
-        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name = self.contact_locators()
+        contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email = self.contact_locators()
         check_text = H1_title.text
-        check_error1 = error_wrong_name.text
-        return check_text, check_error1
+        check_error_name = error_wrong_name.text
+        check_error_email = error_wrong_email.text
+        return check_text, check_error_name, check_error_email
 
 
     #def contact_us_fill_hotel_text(self):
