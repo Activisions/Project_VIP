@@ -1,2 +1,0 @@
-Not Register:
-LastName validation succeeded
