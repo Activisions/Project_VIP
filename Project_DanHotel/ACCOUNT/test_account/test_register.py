@@ -13,7 +13,7 @@ def test_register1(driver):
     filler.register_fill("GAL", "TEST", "0221234", "0540000000", "test@gmail.com")
     register_name, register_lastname, register_id, register_phone, register_email, register_country, register_checkbox1, register_checkbox2, register_button = filler.register_locators()
     time.sleep(1)
-    assert register_button.get_attribute('class') == "u1st-tabbable-element"
+    assert register_button.get_attribute('class') == "disabled u1st-tabbable-element"
     print("Register succeeded")
 
 
