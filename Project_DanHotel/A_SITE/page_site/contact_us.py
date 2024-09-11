@@ -15,8 +15,8 @@ class contact_Us:
         choose_subject = self.driver.find_element(By.XPATH, "//*[@id=\"edit-subject\"]/option[5]")
         contact_note = self.driver.find_element(By.ID, "edit-message")
         contact_button = self.driver.find_element(By.NAME, "op")
-        H1_title =self.driver.find_element(By.XPATH,"//*[@id=\"block-danhotel-content\"]/div/div[3]/div/div[2]/article/div/div/div[1]/div/div/span")
-        error_wrong_name =self.driver.find_element(By.ID, "edit-name-error")
+        H1_title = self.driver.find_element(By.XPATH,"//*[@id=\"block-danhotel-content\"]/div/div[3]/div/div[2]/article/div/div/div[1]/div/div/span")
+        error_wrong_name =self.driver.find_element(By.ID, "edit-name--sXYury9VFGw-error")
         error_wrong_email =self.driver.find_element(By.ID, "edit-email-error")
         self.driver.execute_script("arguments[0].scrollIntoView();",contact_button)
         return contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email
@@ -28,7 +28,7 @@ class contact_Us:
         contact_email.send_keys(email)
         contact_phone.send_keys(phone)
         contact_note.send_keys(nots)
-        # contact_button.click()
+        contact_button.click()
 
     #פונקציה למילוי פרטים (עם בחירת מלון בלבד)
     def contact_us_fill_hotel(self, name, email, phone):
@@ -38,7 +38,7 @@ class contact_Us:
         contact_phone.send_keys(phone)
         choose_hotel_dropdown.click()
         choose_hotel.click()
-        # contact_button.click()
+        contact_button.click()
 
     #פונקציה למילוי פרטים (עם בחירת נושא בלבד)
     def contact_us_fill_subject(self, name, email, phone):
@@ -48,7 +48,7 @@ class contact_Us:
         contact_phone.send_keys(phone)
         choose_subject_dropdown.click()
         choose_subject.click()
-        # contact_button.click()
+        contact_button.click()
 
     def contact_us_fill_text(self):
         contact_name, contact_email, contact_phone, choose_hotel_dropdown, choose_hotel, choose_subject_dropdown, choose_subject, contact_note, contact_button, H1_title, error_wrong_name, error_wrong_email = self.contact_locators()
