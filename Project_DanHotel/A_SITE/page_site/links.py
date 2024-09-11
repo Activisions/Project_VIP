@@ -15,6 +15,7 @@ class Links():
 
     def home_page_links(self):
         link_home = self.driver.find_elements(*self.elements_home_page_links)
+        self.driver.implicitly_wait(10)
         print(f"Number of links: {len(link_home)}")
         all_links_valid = True
         for linker in link_home:
