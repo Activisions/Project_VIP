@@ -6,6 +6,7 @@ Contactus_url = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus1(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -16,6 +17,7 @@ def test_Contactus1(driver):
     print("contact succeeded")
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus2(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -26,6 +28,7 @@ def test_Contactus2(driver):
     print("Name validation succeeded")
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus3(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -36,6 +39,7 @@ def test_Contactus3(driver):
     print("e-mail validation succeeded")
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus4(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -43,6 +47,7 @@ def test_Contactus4(driver):
     print("choosing hotel succeeded")
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus5(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -50,6 +55,7 @@ def test_Contactus5(driver):
     print("choosing subject succeeded")
 
 @pytest.mark.skip
+@allure.description("קוד בתיקון של גל")
 def test_Contactus6(driver):
     driver.get(Contactus_url)
     #operating_Hours = driver.find_element(By.XPATH, "//*[@id=\"block-danhotel-content\"]/div/div[3]/div/div[2]/article/div/div/div[3]/div/div[2]/div/p[1]")
