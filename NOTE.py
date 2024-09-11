@@ -36,6 +36,6 @@
 #
 #
 # def test_h(driver):
-#     driver.get("https://www.danhotels.co.il/")
+#     driver.get("https://www.danhotels.co.il/IsraelHotels")
 #     menulinks2 = MenuLinks2(driver)
 #     menulinks2.home_page_links2()

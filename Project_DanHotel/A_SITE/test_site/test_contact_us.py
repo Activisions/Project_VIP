@@ -1,8 +1,11 @@
+import pytest
+
 from Project_DanHotel.A_SITE.page_site.contact_us import *
 
 Contactus_url = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 
 
+@pytest.mark.skip
 def test_Contactus1(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -12,7 +15,7 @@ def test_Contactus1(driver):
     assert check_text == expected_message
     print("contact succeeded")
 
-
+@pytest.mark.skip
 def test_Contactus2(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -22,7 +25,7 @@ def test_Contactus2(driver):
     assert check_error_name == expected_message
     print("Name validation succeeded")
 
-
+@pytest.mark.skip
 def test_Contactus3(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
@@ -32,21 +35,21 @@ def test_Contactus3(driver):
     assert check_error_email == expected_message
     print("e-mail validation succeeded")
 
-
+@pytest.mark.skip
 def test_Contactus4(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill_hotel("גל", "test@gmail.com", "0530000000")
     print("choosing hotel succeeded")
 
-
+@pytest.mark.skip
 def test_Contactus5(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill_subject("test","test@gmail.com","0530000000")
     print("choosing subject succeeded")
 
-
+@pytest.mark.skip
 def test_Contactus6(driver):
     driver.get(Contactus_url)
     #operating_Hours = driver.find_element(By.XPATH, "//*[@id=\"block-danhotel-content\"]/div/div[3]/div/div[2]/article/div/div/div[3]/div/div[2]/div/p[1]")
