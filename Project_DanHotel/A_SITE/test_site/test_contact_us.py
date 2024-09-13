@@ -5,28 +5,30 @@ from Project_DanHotel.A_SITE.page_site.contact_us import *
 Contactus_url = "https://www.danhotels.co.il/AboutDanhotels/Contactus"
 
 
-@pytest.mark.skip
-@allure.description("קוד בתיקון של גל")
+#@pytest.mark.skip
+#@allure.description("קוד בתיקון של גל")
 def test_Contactus1(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
     contact_filler.contact_us_fill("גל", "test@gmail.com", "0530000000", "test")
-    check_text, check_error_name, check_error_email = contact_filler.contact_us_fill_text()
+    check_text = contact_filler.contact_us_fill_text()
     expected_message = "צור קשר"
     assert check_text == expected_message
     print("contact succeeded")
 
 
-@pytest.mark.skip
-@allure.description("קוד בתיקון של גל")
+#@pytest.mark.skip
+#@allure.description("קוד בתיקון של גל")
 def test_Contactus2(driver):
     driver.get(Contactus_url)
     contact_filler = contact_Us(driver)
-    contact_filler.contact_us_fill("ג", "test@gmail.com", "0530000000", "test")
-    check_text, check_error_name, check_error_email = contact_filler.contact_us_fill_text()
-    expected_message = "Please enter at least 2 characters"
+    contact_filler.contact_us_fill("ג", "@.com", "0530000000", "test")
+    check_error_name, check_error_email = contact_filler.contact_us_fill_text_errors()
+    expected_message = "Please enter at least 2 characters."
+    expected_email = "אמייל does not contain a valid email."
     assert check_error_name == expected_message
-    print("Name validation succeeded")
+    assert check_error_email == expected_email
+    print("Name and email validation succeeded")
 
 
 @pytest.mark.skip
